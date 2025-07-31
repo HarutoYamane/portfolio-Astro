@@ -1,0 +1,257 @@
+---
+// Headerコンポーネント
+---
+
+<link
+  href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho"
+  rel="stylesheet"
+/>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/" class="logo-link">
+        <span class="logo-text">Haruto - Yamane Portfolio</span>
+      </a>
+    </div>
+
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/about" class="nav-link">自己紹介</a>
+        </li>
+        <li class="nav-item">
+          <a href="/skills" class="nav-link">スキル</a>
+        </li>
+        <li class="nav-item">
+          <a href="/works" class="nav-link">制作物</a>
+        </li>
+      </ul>
+      <ul class="links-list">
+        <li class="links-item">
+          <a href="https://github.com/haru-yamane" class="links-link">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="links-item">
+          <a href="https://x.com/haru_momo_coco" class="links-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="links-item">
+          <a href="mailto:haru.momo.coco@gmail.com" class="links-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap");
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+
+  .logo-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .logo-text {
+    font-family: "Caveat", cursive;
+  }
+
+  .logo-link:hover {
+    color: #007acc;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-family: "Sawarabi Mincho";
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: #007acc;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007acc;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .links-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .links-list a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+
+  .links-list a:hover {
+    color: #007acc;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    gap: 4px;
+  }
+
+  .hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .logo-text {
+      font-size: 1.2rem;
+    }
+    .nav {
+      flex-direction: column;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .nav.active {
+      transform: translateY(0);
+      opacity: 1;
+      background-color: #fff;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      visibility: visible;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .links-list {
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+
+    .links-list a {
+      font-size: 1.5rem;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+</style>
+
+<script>
+  // ハンバーガーメニューの動作
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.getElementById("nav");
+
+  hamburger?.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    nav?.classList.toggle("active");
+  });
+
+  // スクロール時のヘッダー効果
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header");
+    if (window.scrollY > 50) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  });
+</script>

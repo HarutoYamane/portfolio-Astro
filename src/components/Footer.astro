@@ -1,0 +1,218 @@
+---
+// Footerコンポーネント
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 class="footer-title">Portfolio</h3>
+        <p class="footer-description">
+          24歳未経験から始めるWeb開発者のポートフォリオサイトです。<br />
+          学習の過程と成長を記録しています。<br />
+          現在は、Webエンジニアを目指して勉強中です。
+        </p>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-subtitle">ナビゲーション</h4>
+        <ul class="footer-links">
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="/about" class="footer-link">自己紹介</a></li>
+          <li><a href="/skills" class="footer-link">スキル</a></li>
+          <li><a href="/works" class="footer-link">制作物</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 class="footer-subtitle">連絡先</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="mailto:haru.momo.coco@gmail.com" class="footer-link">
+              <i class="fas fa-envelope icon"></i>
+              haru.momo.coco@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/yourusername"
+              class="footer-link"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-github icon"></i>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/yourusername"
+              class="footer-link"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-twitter icon"></i>
+              X（旧Twitter）
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        <p>&copy; 2025 Haruto - Yamane Portfolio. All rights reserved.</p>
+      </div>
+      <div class="footer-built-with">
+        <p>
+          Built with <a
+            href="https://astro.build"
+            target="_blank"
+            rel="noopener"
+            class="tech-link">Astro</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .footer-description {
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+  }
+
+  .footer-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.7rem;
+  }
+
+  .footer-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-link:hover {
+    color: white;
+  }
+
+  .icon {
+    font-size: 1.1rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copyright,
+  .footer-built-with {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+  }
+
+  .tech-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .tech-link:hover {
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .footer-title {
+      font-size: 1.3rem;
+    }
+
+    .footer-subtitle {
+      font-size: 1rem;
+    }
+
+    .footer-subtitle:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin-bottom: 2rem;
+    }
+
+    .footer-description {
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+  }
+</style>
