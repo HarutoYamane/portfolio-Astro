@@ -1,0 +1,402 @@
+---
+import Layout from "../layouts/Layout.astro";
+// Aboutページ
+---
+
+<Layout>
+  <div class="title-container">
+    <h1 class="about-Me">About Me</h1>
+    <div class="title-content">
+      <img class="about-icon" src="../public/profile.jpg" alt="profile" />
+      <div class="catch-text">
+        <p>
+          日々学んで成長し、<br />
+          誰かの力となれる、<br />
+          Webエンジニアを目指します。
+        </p>
+        <div class="title-text">
+          <p>山根 晴斗 <span id="age"></span>歳</p>
+          <p style="font-size: 1rem">
+            徳島県生まれ徳島県育ち。工業高校である徳島科学技術高等学校に入学し、
+            電気・PCの仕組み・通信・プログラミングなどを学ぶ。
+            <br />
+            当時はプログラミングの楽しさに気づかず、特にやりたいことも無かった為、待遇だけを意識し地元の大企業に製造職で就職。
+            <br />
+            「物や機械」と向き合い、やりがいを感じない日々を送る中で、業務改善の一環として、プログラミングを使用して業務の一部を自動化したとき、初めてプログラミングの面白さを実感した。
+            <br />
+            自分で思い描くものが作れる・誰かの役に立てる事に魅力を、論理的思考力に自身の適正を感じ、IT業界への転職を決意した。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-container">
+    <div class="about-content">
+      <div class="about-section">
+        <h2 class="section-title">経歴</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2025年6月</div>
+            <div class="timeline-content">
+              <h3>Web開発 - 学習再開</h3>
+              <p>
+                HTML、CSS、JavaScriptの基礎から学習を開始。
+                <br />
+                React、Astroなどのモダンフレームワークを学習。
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2025年5月</div>
+            <div class="timeline-content">
+              <h3>基本情報技術者試験合格</h3>
+              <p>約3ヶ月間に渡り勉強した後、受験1回目で無事合格。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2024年5月</div>
+            <div class="timeline-content">
+              <h3>日亜科学工業(株) - 退職</h3>
+              <p>
+                高校新卒から約5年間勤務した会社を退職。IT業界を目指す為、退職を決意。
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2019年4月</div>
+            <div class="timeline-content">
+              <h3>徳島科学技術高等学校 - 卒業</h3>
+              <p>
+                充実した3年間を過ごした。しかしやりたい事が見つからず、待遇の良い地元の大企業に製造職で就職。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2 class="section-title">趣味・興味</h2>
+        <div class="interests">
+          <div class="interest-item">
+            <span class="interest-icon">💻</span>
+            <span>ゲーム（PC・家庭用ゲーム機）</span>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">📚</span>
+            <span>E-Sports観戦</span>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">🎵</span>
+            <span>音楽鑑賞</span>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">🏃</span>
+            <span>筋トレ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <h2 class="section-title">
+          現在の目標 <br /><span style="font-size: 1rem">(2025/8/1 更新）</span>
+        </h2>
+        <p class="about-goal">
+          フルスタックエンジニアとして活躍し、
+          ユーザーに価値を提供できるWebアプリケーションを開発することが目標です。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* ===== title-container 関連 ===== */
+    .title-container {
+      font-family: "Sawarabi Mincho", sans-serif;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      position: relative;
+      margin-top: 70px; /* Headerの高さ */
+      background-image: url("/自己紹介の背景.jpeg");
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column; /* 縦並びに変更 */
+      align-items: center;
+      justify-content: flex-start; /* 上から配置 */
+      color: white;
+    }
+
+    .title-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* オーバーレイ追加 */
+      z-index: 1;
+    }
+
+    /* ===== about-Me ===== */
+    .about-Me {
+      font-family: "Caveat", cursive;
+      position: relative;
+      background-color: rgba(47, 47, 47, 0.5);
+      border: 2px solid rgba(85, 85, 85, 0.8);
+      border-radius: 50px;
+      padding: 15px;
+      color: #87ceeb;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+      z-index: 2;
+    }
+
+    h1.about-Me {
+      font-weight: 400;
+    }
+
+    /* ===== title-content 関連 ===== */
+    .title-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      position: relative;
+      z-index: 2;
+      max-width: 1200px; /* 最大幅も設定 */
+      margin: 0 auto; /* 中央揃え */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .catch-text {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: left;
+      font-size: 1.5rem;
+      max-width: 500px; /* 最大幅を設定 */
+    }
+
+    .title-text {
+      font-size: 1.5rem;
+    }
+
+    .about-icon {
+      width: 300px;
+      height: 300px;
+      border: 2px solid #87ceeb;
+      border-radius: 50%;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    /* ===== about-container 関連 ===== */
+    .about-container {
+      min-height: calc(100vh - 70px);
+      background-image: url("/190816springmain.webp");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    .about-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .about-content {
+      gap: 2rem;
+      position: relative;
+      z-index: 2;
+      width: 800;
+      padding: 2rem;
+      color: white;
+    }
+
+    /* ===== about-section 関連 ===== */
+    .about-section {
+      margin-bottom: 3rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .about-section:hover {
+      transform: translateY(-10px);
+      transition: transform 0.3s ease;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-goal {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ===== timeline 関連 ===== */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .timeline-date {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ===== interests 関連 ===== */
+    .interests {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .interest-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .interest-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .interest-icon {
+      font-size: 1.5rem;
+    }
+
+    /* ===== レスポンシブ対応 ===== */
+    @media (max-width: 768px) {
+      .title-content {
+        width: 90%; /* モバイルでは90%に */
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .about-Me {
+        font-size: 2rem;
+      }
+
+      .about-content {
+        padding: 1rem;
+      }
+
+      .about-section {
+        padding: 1.5rem;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .timeline-date {
+        min-width: auto;
+        align-self: flex-start;
+      }
+
+      .interests {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-icon {
+        width: 150px;
+        height: 150px;
+      }
+
+      .interests {
+        grid-template-columns: 1fr;
+      }
+
+      .title-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    // 年齢を計算する関数
+    function calculateAge(birthDate: string): number {
+      const today = new Date();
+      const birth = new Date(birthDate);
+
+      let age = today.getFullYear() - birth.getFullYear();
+      const monthDiff = today.getMonth() - birth.getMonth();
+
+      // 今年の誕生日がまだ来ていない場合は1歳引く
+      if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && today.getDate() < birth.getDate())
+      ) {
+        age--;
+      }
+
+      return age;
+    }
+
+    // 年齢を表示
+    document.addEventListener("DOMContentLoaded", () => {
+      const birthDate = "2001-03-19"; // 誕生日を設定
+      const age = calculateAge(birthDate);
+      const ageElement = document.getElementById("age");
+      if (ageElement) {
+        ageElement.textContent = age.toString();
+      }
+    });
+  </script>
+</Layout>
